@@ -3,8 +3,8 @@
 #include "Type.h"
 #include <iostream>
 
-#define WELCOME "Welcome to Magshimim Python Interperter version 1.0 by "
-#define YOUR_NAME "[YOUR NAME]"
+static inline constexpr const char *WELCOME = "Welcome to Magshimim Python Interperter version 1.0 by ";
+static inline constexpr const char *YOUR_NAME = "Idan Drori";
 
 int main(int argc, char **argv)
 {
@@ -18,8 +18,14 @@ int main(int argc, char **argv)
 
   while (input_string != "quit()")
   {
-    // parsing command
-    Parser::parseString(input_string);
+    try
+    {
+      Parser::parseString(input_string);
+    }
+    catch (const InterpreterException &e)
+    {
+      std::cout << e.what() << std::endl;
+    }
 
     // get new command from user
     std::cout << ">>> ";
