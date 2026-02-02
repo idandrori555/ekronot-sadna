@@ -9,3 +9,7 @@ constexpr const char TAB = '\t';
 
 constexpr const char *WELCOME = "Welcome to Magshimim Python Interperter version 1.0 by ";
 constexpr const char *YOUR_NAME = "Idan Drori";
+
+constexpr const char UNDERSCORE = '_';
+
+constexpr const char EQUAL_SIGN = '=';

@@ -2,8 +2,14 @@
 
 bool Helper::isInteger(const std::string &s)
 {
+  if (s.empty())
+    return false;
+
   int start = (s[0] == '-') ? 1 : 0;
-  for (int i = start; i < s.size(); i++)
+  if (s.size() <= (size_t)start)
+    return false;
+
+  for (int i = start; i < (int)s.size(); i++)
   {
     if (!isDigit(s[i]))
     {

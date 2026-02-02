@@ -3,5 +3,6 @@
 
 class IndentationException : public InterpreterException
 {
-  virtual const char *what(void) const noexcept;
+public:
+  virtual const char *what(void) const noexcept override;
 };

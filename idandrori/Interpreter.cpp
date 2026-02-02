@@ -1,10 +1,8 @@
 #include "InterpreterException.h"
 #include "Parser.h"
-#include "SyntaxException.h"
 #include "Type.h"
 #include "const.h"
 #include <iostream>
-#include <print>
 
 int main(int argc, char **argv)
 {
@@ -22,14 +20,12 @@ int main(int argc, char **argv)
     {
       Type *type = Parser::parseString(input_string);
 
-      if (type->isPrintable())
+      if (type != nullptr && type->isPrintable())
       {
         std::cout << type->toString() << std::endl;
 
         if (type->getIsTemp())
-        {
           delete type;
-        }
       }
     }
     catch (const InterpreterException &e)
@@ -45,6 +41,9 @@ int main(int argc, char **argv)
     std::cout << ">>> ";
     std::getline(std::cin, input_string);
   }
+
+  // clear memory
+  Parser::freeMemory();
 
   return 0;
 }

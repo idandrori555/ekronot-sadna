@@ -8,4 +8,4 @@ bool Void::isPrintable(void) const
 std::string Void::toString(void) const
 {
   return "";
-};
+}

@@ -7,6 +7,7 @@ class Type
 
 public:
   Type(void);
+
   virtual ~Type(void) = default;
 
   virtual void setIsTemp(const bool isTemp);

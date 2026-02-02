@@ -5,5 +5,5 @@
 class SyntaxException : public InterpreterException
 {
 public:
-  virtual const char *what(void) const noexcept;
+  virtual const char *what(void) const noexcept override;
 };
