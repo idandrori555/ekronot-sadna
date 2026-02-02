@@ -6,11 +6,11 @@
 class String : public Sequence
 {
 public:
-  String(const std::string &value);
-  ~String(void) = default;
+  String(const std::string &val);
+  virtual ~String() = default;
 
-  bool isPrintable(void) const override;
-  std::string toString(void) const override;
+  virtual bool isPrintable() const override;
+  virtual std::string toString() const override;
 
 private:
   std::string _value;

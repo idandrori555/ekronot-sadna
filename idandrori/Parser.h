@@ -10,7 +10,7 @@
 class Parser
 {
 public:
-  static Type *parseString(const std::string &str);
+  static Type *parseString(std::string &str);
   static Type *getType(const std::string &str);
 
 private:

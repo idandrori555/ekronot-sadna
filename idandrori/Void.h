@@ -4,6 +4,7 @@
 
 class Void : public Type
 {
+public:
   Void(void) = default;
   ~Void(void) = default;
 

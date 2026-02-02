@@ -1,12 +1,15 @@
 #include "Type.h"
 
-bool Type::getIsTemp(void) const
+Type::Type(void) : _isTemp(false)
 {
-  return _isTemp;
 }
 
-void Type::setIsTemp(bool isTemp)
+void Type::setIsTemp(const bool isTemp)
 {
   _isTemp = isTemp;
 }
 
+bool Type::getIsTemp(void) const
+{
+  return _isTemp;
+}

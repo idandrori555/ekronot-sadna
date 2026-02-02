@@ -1,10 +1,10 @@
 #include "InterpreterException.h"
 #include "Parser.h"
+#include "SyntaxException.h"
 #include "Type.h"
+#include "const.h"
 #include <iostream>
-
-constexpr const char *WELCOME = "Welcome to Magshimim Python Interperter version 1.0 by ";
-constexpr const char *YOUR_NAME = "Idan Drori";
+#include <print>
 
 int main(int argc, char **argv)
 {
@@ -20,11 +20,25 @@ int main(int argc, char **argv)
   {
     try
     {
-      Parser::parseString(input_string);
+      Type *type = Parser::parseString(input_string);
+
+      if (type->isPrintable())
+      {
+        std::cout << type->toString() << std::endl;
+
+        if (type->getIsTemp())
+        {
+          delete type;
+        }
+      }
     }
     catch (const InterpreterException &e)
     {
       std::cout << e.what() << std::endl;
+    }
+    catch (...)
+    {
+      std::cout << "Unknown error" << std::endl;
     }
 
     // get new command from user

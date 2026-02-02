@@ -8,3 +8,8 @@ std::string String::toString(void) const
 {
   return _value;
 };
+
+bool String::isPrintable(void) const
+{
+  return true;
+}

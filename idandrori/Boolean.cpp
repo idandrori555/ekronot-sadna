@@ -1,7 +1,5 @@
 #include "Boolean.h"
-
-constexpr const char *TRUE_STR = "True";
-constexpr const char *FALSE_STR = "False";
+#include "const.h"
 
 Boolean::Boolean(bool value) : _value(value)
 {
