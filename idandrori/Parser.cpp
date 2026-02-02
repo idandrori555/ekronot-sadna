@@ -2,9 +2,9 @@
 #include "IndentationException.h"
 #include <iostream>
 
-static inline constexpr const char NEW_LINE = '\n';
-static inline constexpr const char SPACE = ' ';
-static inline constexpr const char TAB = '\t';
+constexpr const char NEW_LINE = '\n';
+constexpr const char SPACE = ' ';
+constexpr const char TAB = '\t';
 
 Type *Parser::parseString(const std::string &str)
 {

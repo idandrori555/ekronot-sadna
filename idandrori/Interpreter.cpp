@@ -3,8 +3,8 @@
 #include "Type.h"
 #include <iostream>
 
-static inline constexpr const char *WELCOME = "Welcome to Magshimim Python Interperter version 1.0 by ";
-static inline constexpr const char *YOUR_NAME = "Idan Drori";
+constexpr const char *WELCOME = "Welcome to Magshimim Python Interperter version 1.0 by ";
+constexpr const char *YOUR_NAME = "Idan Drori";
 
 int main(int argc, char **argv)
 {
